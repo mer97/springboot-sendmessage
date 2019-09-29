@@ -32,12 +32,10 @@ public class SendMessageService {
         String code = createRandomNum(6);
         String sendPhoneNum = "136*******";
         Integer resultCode = SendMessageUtil.send("leemer-msg","d41d8********",sendPhoneNum,"尊敬的用户，您好，您的验证码为："+code+"，请于"+timeout+"分钟内正确输入，如非本人操作，请忽略此短信。");
-        if (resultCode>0){
-            //手机验证码发送成功，业务处理
-        }
 
         System.out.println(SendMessageUtil.getMessage(resultCode));
-        if (resultCode > 0){
+        if (resultCode>0){
+            //手机验证码发送成功，业务处理
             System.out.println("已发送至："+sendPhoneNum+"，验证码："+ code);
         }
     }
